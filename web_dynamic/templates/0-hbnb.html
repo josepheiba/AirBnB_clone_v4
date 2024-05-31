@@ -9,6 +9,15 @@
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css">
     <link rel="icon" href="../static/images/icon.png" />
     <title>HBnB</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const cacheId = "{{ cache_id }}";
+        console.log(cacheId);
+        document.querySelectorAll('link').forEach(link => {
+          link.setAttribute('href', link.getAttribute('href') + '?' + cacheId);
+        });
+      });
+    </script>
   </head>
   <body>
     <header>
