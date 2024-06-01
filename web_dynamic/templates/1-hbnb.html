@@ -9,6 +9,8 @@
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
     <title>HBnB</title>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="static/scripts/1-hbnb.js?{{ cache_id }}"></script>
     <!--
     <script>
       document.addEventListener("DOMContentLoaded", function() {
@@ -51,7 +53,11 @@
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li>{{ amenity.name }}</li>
+		  <li>
+			  <input type="checkbox" id="amenity-{{ amenity.id }}">
+			  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+			  <label for="amenity-{{ amenity.id }}">{{ amenity.name }}</label>
+		  </li>
 	      {% endfor %}
 	    </ul>
 	  </div>
