@@ -8,5 +8,7 @@ $(document).ready(function () {
 	} else {
       delete selectedAmenities[amenityId];
 	}
+	const amenityList = Object.values(selectedAmenities).join(', ');
+    $('.amenities h4').text(amenityList || '\u00A0');
   });
 });
