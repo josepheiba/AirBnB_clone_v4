@@ -93,11 +93,16 @@ button:hover {
 
 .popover ul h2{
     margin-top: 1.5%;
-    margin-bottom: 5%;
+    margin-bot.tom: 5%;
     margin-left: 0px;
 }
 
 .amenities:hover .popover,
 .locations:hover .popover {
     visibility: visible;
+}
+
+.amenities .popover ul li input {
+	right: 10px;
+	position: relative;
 }
