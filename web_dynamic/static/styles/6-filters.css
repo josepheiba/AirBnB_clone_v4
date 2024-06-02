@@ -40,6 +40,9 @@ button:hover {
     margin-top: 0;
     font-weight: 400;
     font-size: 14px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .locations {
     height: 100%;
@@ -47,7 +50,6 @@ button:hover {
     border-right: 1px solid #DDDDDD;
 }
 .amenities {
-    height: 100%;
     width: 25%;
 }
 
