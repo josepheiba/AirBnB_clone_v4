@@ -20,14 +20,41 @@ $(document).ready(function () {
         titleBox.append(placeName).append(placePrice);
 
         const information = $('<div></div>').addClass('information');
+        var maxGuest, numberRooms, numberBathrooms;
+        if (place.max_guest != 1) {
+          maxGuest = $('<div></div>').addClass('max_guest').text(place.max_guest + 'Guests')
+        }
+        else {
+          maxGuest = $('<div></div>').addClass('max_guest').text(place.max_guest + 'Guest')
+        }
+        if (place.number_rooms != 1) {
+          numberRooms = $('<div></div>').addClass('number_rooms').text(place.number_rooms + 'Bedrooms')
+        }
+        else {
+          numberRooms = $('<div></div>').addClass('number_rooms').text(place.number_rooms + 'Bedroom')
+        }
+        if (place.number_bathrooms != 1) {
+          numberBathrooms = $('<div></div>').addClass('number_bathrooms').text(place.number_bathrooms + 'Bathrooms')
+        }
+        else {
+          numberBathrooms = $('<div></div>').addClass('number_bathrooms').text(place.number_bathrooms + 'Bathroom')
+        }
+        information.append(maxGuest).append(numberRooms).append(numberBathrooms);
 
         const user = $('<div></div>').addClass('user');
+        const owner = $('<b></b>').text('Owner: ');
+        $.get('http://localhost:5001/api/v1/users/' + place.user_id, function(data) {
+          userFname = data.first_name;
+          userLname = data.last_name
+          owner.after(userFname + ' ' + userLname);
+        });
+        user.append(owner);
 
-        const description = $('<div></div>').addClass('description');
+        const description = $('<div></div>').addClass('description').html(place.description);
 
         myArticle.append(titleBox).append(information).append(user).append(description);
         $('.places').append(myArticle);
-        console.log(place);
+        // console.log(place);
       }
     }
   });

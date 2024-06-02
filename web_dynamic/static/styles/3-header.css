@@ -15,7 +15,7 @@ header #api_status {
   height: 40px;
   width: 40px;
   right: 20px;
-  position: fixed;
+  position: absolute;
   top: 15px;
   border-radius: 20px;
 }
