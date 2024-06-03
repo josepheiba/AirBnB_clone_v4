@@ -65,7 +65,6 @@ $(document).ready(function () {
 
         myArticle.append(titleBox).append(information).append(user).append(description);
         $('.places').append(myArticle);
-        // console.log(place);
       }
     }
   });
@@ -78,6 +77,17 @@ $(document).ready(function () {
     fetchPlaces(amenities);
   });
 
-  
+  function fetchStates() {
+    $.ajax({
+      url: 'http://localhost:5001/api/v1/states/',
+      type: 'GET',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: JSON.stringify(),
+      success: function(data) {
+        
+      }
+    })
+  }
 
 });
